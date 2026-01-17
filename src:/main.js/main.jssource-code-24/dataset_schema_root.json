@@ -1,0 +1,17 @@
+{
+  "actorDatasetSchemaVersion": 1,
+  "fields": [
+    { "name": "runId", "title": "Run ID", "type": "string" },
+    { "name": "collectedAt", "title": "Collected At", "type": "string" },
+    { "name": "rowIndex", "title": "Row Index", "type": "number" },
+    { "name": "rawText", "title": "Raw Text", "type": "string" }
+  ],
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": ["runId", "collectedAt", "rowIndex", "rawText"]
+      }
+    }
+  }
+}

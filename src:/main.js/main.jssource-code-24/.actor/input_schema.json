@@ -1,0 +1,100 @@
+{
+  "title": "NBO TX SOS Entity Harvester Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "username": {
+      "title": "SOSDirect Username",
+      "type": "string",
+      "description": "Your SOSDirect login username (Client ID).",
+      "editor": "textfield"
+    },
+    "password": {
+      "title": "SOSDirect Password",
+      "type": "string",
+      "description": "Your SOSDirect login password.",
+      "editor": "textfield",
+      "isSecret": true
+
+    },
+    "harvestMode": {
+      "title": "Harvest mode",
+      "type": "string",
+      "description": "oneDay = pull for a specific targetDate. all60Days = pull the full 60-day window (no date filtering).",
+      "enum": ["oneDay", "all60Days"],
+      "default": "oneDay",
+      "editor": "select"
+    },
+    "targetDate": {
+      "title": "Target date (YYYY-MM-DD)",
+      "type": "string",
+      "description": "Used only when harvestMode=oneDay. Format: YYYY-MM-DD.",
+      "default": "2026-01-02",
+      "editor": "textfield"
+    },
+    "maxPages": {
+      "title": "Max pages",
+      "type": "integer",
+      "description": "Maximum number of paginated result pages to harvest.",
+      "default": 250,
+      "minimum": 1,
+      "maximum": 2000,
+      "editor": "number"
+    },
+    "paymentClientAccountValue": {
+      "title": "Payment client account value",
+      "type": "string",
+      "description": "If SOSDirect prompts you to choose a client/payment account, this value will be selected (example: \"5\").",
+      "default": "5",
+      "editor": "textfield"
+    },
+    "navTimeoutMs": {
+      "title": "Navigation timeout (ms)",
+      "type": "integer",
+      "description": "Timeout for navigations / full page loads in milliseconds.",
+      "default": 120000,
+      "minimum": 10000,
+      "maximum": 300000,
+      "editor": "number"
+    },
+    "selectorTimeoutMs": {
+      "title": "Selector timeout (ms)",
+      "type": "integer",
+      "description": "Timeout for waiting on selectors / elements in milliseconds.",
+      "default": 60000,
+      "minimum": 10000,
+      "maximum": 300000,
+      "editor": "number"
+    },
+    "headless": {
+      "title": "Headless",
+      "type": "boolean",
+      "description": "Run browser headless.",
+      "default": true,
+      "editor": "checkbox"
+    },
+    "debugHtml": {
+      "title": "Debug HTML",
+      "type": "boolean",
+      "description": "Write key HTML snapshots to the key-value store.",
+      "default": true,
+      "editor": "checkbox"
+    },
+    "debugScreenshots": {
+      "title": "Debug screenshots",
+      "type": "boolean",
+      "description": "Write key screenshots to the key-value store.",
+      "default": true,
+      "editor": "checkbox"
+    },
+    "searchWildcard": {
+      "title": "Search wildcard",
+      "type": "string",
+      "description": "Value to place in the RA activity search box (often \"*\" or \"**\").",
+      "default": "**",
+      "editor": "textfield"
+    }
+  },
+  "required": ["username", "password", "harvestMode"],
+  "additionalProperties": false
+}

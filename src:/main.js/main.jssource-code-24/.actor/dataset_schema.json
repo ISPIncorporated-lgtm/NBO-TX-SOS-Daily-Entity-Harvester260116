@@ -1,0 +1,29 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "runId": {
+      "title": "Run ID",
+      "type": "string"
+    },
+    "collectedAt": {
+      "title": "Collected At",
+      "type": "string"
+    },
+    "rowIndex": {
+      "title": "Row Index",
+      "type": "number"
+    },
+    "rawText": {
+      "title": "Raw Text",
+      "type": "string"
+    }
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": ["runId", "collectedAt", "rowIndex", "rawText"]
+      }
+    }
+  }
+}

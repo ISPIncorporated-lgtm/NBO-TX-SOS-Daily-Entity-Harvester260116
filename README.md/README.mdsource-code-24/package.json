@@ -1,0 +1,14 @@
+{
+  "name": "nbo-tx-sos-entity-harvester",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Apify Actor: TX SOSDirect Registered Agent Activity harvester",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "dependencies": {
+    "apify": "^3.1.10",
+    "crawlee": "^3.9.2",
+    "playwright": "^1.47.0"
+  }
+}
